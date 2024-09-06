@@ -1,0 +1,234 @@
+.vacancy {
+  max-width: 1140px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+.vacancy-form-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 70px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.vacancy-title {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.vacancy-title img {
+  width: 110px;
+  height: 110px;
+  margin-top: -7px;
+}
+.vacancy-form-title {
+  text-align: left;
+  max-width: 700px;
+
+  color: #183d3d;
+  font-family: "Druk";
+  font-size: 42px;
+}
+.vacancy-form-subtitle {
+  font-family: "Noto Sans";
+  font-weight: 300;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+.vacancy-form .vacancy-form-group {
+  margin-bottom: 15px;
+}
+
+.vacancy-form label {
+  font-family: "Noto Sans";
+  font-weight: 200;
+  display: block;
+  margin-bottom: 5px;
+  color: #183d3d;
+}
+
+.vacancy-form input,
+.vacancy-form select {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+  width: 100%;
+  height: 55px;
+  padding: 8px;
+
+  border-radius: 4px 4px 0 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #183d3d;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: "Noto Sans";
+}
+
+.vacancy-form-group .form-control {
+  width: 100%;
+  height: 55px;
+  padding: 8px;
+
+  border: 0.5px solid #183d3d !important;
+}
+.vacancy-form-group .flag-dropdown {
+  border: 0.5px solid #183d3d !important;
+  border-right: none !important;
+}
+.driver-submit-button {
+  font-family: "Druk";
+  width: 100%;
+  padding: 10px;
+  margin-top: 40px;
+  height: 60px;
+  background-color: #183d3d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s all ease-in-out;
+}
+.driver-submit-button:hover {
+  background-color: #80fcdc;
+  color: #183d3d;
+}
+
+.vc-el {
+  position: absolute;
+  top: -60px;
+  left: 40px;
+  height: 160px;
+  width: 160px;
+
+  animation: rotate 30s linear infinite;
+}
+.vc-el2 {
+  position: absolute;
+  bottom: -50px;
+  right: 40px;
+  height: 160px;
+  width: 160px;
+
+  animation: rotate 30s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.success-message,
+.error-message {
+  text-align: center;
+}
+
+.success-message h2,
+.error-message h2 {
+  font-family: "Druk";
+  color: #183d3d;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.success-message p,
+.error-message p {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 200;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #348232; /* success color */
+}
+
+.error-message p {
+  color: #b02424; /* error color */
+}
+
+.driver-submit-button {
+  background-color: #183d3d;
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Druk";
+  transition: 0.2s all ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .vacancy-form-container {
+    padding: 40px;
+  }
+
+  .vacancy-title {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vacancy-title img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .vacancy-form-title {
+    font-size: 28px;
+  }
+
+  .vacancy-form-subtitle {
+    font-size: 14px;
+  }
+
+  .driver-submit-button {
+    font-size: 14px;
+    height: 50px;
+  }
+
+  .vc-el,
+  .vc-el2 {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vacancy {
+    padding: 0 10px;
+  }
+
+  .vacancy-form-container {
+    padding: 20px;
+  }
+
+  .vacancy-title img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vacancy-form-title {
+    font-size: 24px;
+  }
+
+  .vacancy-form-subtitle {
+    font-size: 12px;
+  }
+
+  .driver-submit-button {
+    font-size: 12px;
+    height: 45px;
+  }
+
+  .vc-el,
+  .vc-el2 {
+    height: 80px;
+    width: 80px;
+  }
+}

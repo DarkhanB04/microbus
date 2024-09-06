@@ -1,0 +1,263 @@
+.price-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
+}
+
+.price-title {
+  font-family: "Druk";
+  font-size: 48px;
+  margin-bottom: 100px;
+  color: #183d3d;
+}
+
+.pricing-block {
+  width: 913px;
+  height: 442px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pricing-block.premium {
+  border: 2px solid #f9e591;
+}
+.pricing-block.comfort {
+  border: 2px solid #98edc6;
+}
+.pricing-block.economy {
+  border: 2px solid #418686;
+}
+
+.pricing-label {
+  position: absolute;
+  top: -30px;
+}
+
+.pricing-price {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  font-size: 24px;
+  text-align: left;
+  font-family: "Druk";
+  display: flex;
+  flex-flow: column;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.new-price {
+  color: #183d3d;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.pricing-content {
+  display: flex;
+  gap: 93px;
+}
+
+.pricing-image {
+  width: 358.34px;
+  height: 305.49px;
+  margin-left: -120px;
+  margin-top: 80px;
+}
+.check {
+  width: 20px;
+  height: 20px;
+}
+.pricing-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricing-details h3 {
+  font-size: 24px;
+  font-family: "Druk";
+  color: #183d3d;
+  margin-bottom: 31px;
+  padding-top: 40px;
+}
+.bus-years {
+  font-size: 18px;
+}
+
+.pricing-details ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-details li {
+  font-family: "Noto Sans";
+  font-weight: 200;
+  color: #183d3d;
+  opacity: 0.6;
+  font-size: 14.5px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hr-team {
+  display: flex;
+  gap: 20px;
+}
+.hr-team hr {
+  background-color: #183d3d;
+  height: 0.5px;
+  width: 30px;
+}
+.btn-book {
+  background-color: #183d3d;
+  color: #fff;
+  width: 256px;
+  height: 78.55px;
+  border-radius: 20px;
+  border: none;
+  font-family: "Druk";
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s background-color ease-in-out;
+  margin-top: 30px;
+}
+.btn-book.economy {
+  margin-top: 50px;
+}
+.btn-book:hover {
+  background: #bcfceb;
+  color: #183d3d;
+}
+
+/* Tablet (landscape) */
+@media (max-width: 1024px) {
+  .price-title {
+    font-size: 36px;
+    margin-bottom: 80px;
+  }
+
+  .pricing-block {
+    padding: 15px;
+    margin-bottom: 100px;
+  }
+
+  .pricing-content {
+    gap: 50px;
+  }
+
+  .pricing-image {
+    margin-top: 60px;
+  }
+
+  .pricing-details h3 {
+    font-size: 22px;
+  }
+
+  .pricing-details li {
+    font-size: 13.5px;
+  }
+}
+
+/* Tablet (portrait) */
+@media (max-width: 768px) {
+  .price-title {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  .pricing-block {
+    padding: 10px;
+    margin-bottom: 80px;
+  }
+
+  .pricing-content {
+    gap: 40px;
+  }
+
+  .pricing-image {
+    margin-top: 50px;
+  }
+
+  .pricing-details h3 {
+    font-size: 20px;
+  }
+
+  .pricing-details li {
+    font-size: 12.5px;
+  }
+}
+
+/* Mobile (landscape) */
+@media (max-width: 600px) {
+  .price-title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  .pricing-block {
+    padding: 10px;
+    margin-bottom: 60px;
+  }
+
+  .pricing-content {
+    gap: 30px;
+  }
+
+  .pricing-image {
+    margin-top: 40px;
+  }
+
+  .pricing-details h3 {
+    font-size: 18px;
+  }
+
+  .pricing-details li {
+    font-size: 12px;
+  }
+}
+
+/* Mobile (portrait) */
+@media (max-width: 480px) {
+  .price-wrap {
+    display: none;
+  }
+  .price-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .pricing-block {
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+
+  .pricing-content {
+    gap: 20px;
+  }
+
+  .pricing-image {
+    margin-top: 30px;
+  }
+
+  .pricing-details h3 {
+    font-size: 16px;
+  }
+
+  .pricing-details li {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,187 @@
+.bus-routes {
+  color: #183d3d;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 150px;
+}
+
+.city-routes {
+  display: flex;
+  margin-bottom: 150px;
+  gap: 140px;
+}
+.city-routes-title {
+  font-family: "Druk";
+  width: 435px;
+  height: 122px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 61px;
+  color: #183d3d;
+  margin-bottom: 30px;
+}
+body.dark .city-routes-title {
+  color: #93b1a6;
+}
+
+.city-routes-desc {
+  width: 443px;
+  height: 132px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #183d3d;
+}
+body.dark .city-routes-desc {
+  color: #93b1a6;
+}
+
+.city-routes-desc-bottom {
+  width: 443px;
+  height: 44px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  color: #183d3d;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+body.dark .city-routes-desc-bottom {
+  color: #93b1a6;
+}
+.city-routes-btn {
+  width: 231.42px;
+  height: 65.96px;
+  border: none;
+  background: rgba(128, 252, 220, 0.5);
+  font-family: "Druk";
+  font-size: 12px;
+  color: #183d3d;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+.city-routes-btn:hover {
+  background-color: #183d3d;
+  color: #fff;
+}
+body.dark .city-routes-btn {
+  background-color: #93b1a6;
+  color: #183d3d;
+}
+body.dark .city-routes-btn:hover {
+  background-color: #80fcdc;
+  color: #183d3d;
+}
+.routes-img {
+  width: 556px;
+  height: 511px;
+}
+.intercity-routes {
+  display: flex;
+}
+
+/* Responsive for tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .bus-routes {
+    max-width: 90%;
+  }
+
+  .city-routes {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px;
+  }
+
+  .city-routes-title {
+    text-align: center;
+    font-size: 42px;
+    line-height: 55px;
+  }
+
+  .city-routes-desc,
+  .city-routes-desc-bottom {
+    text-align: center;
+    width: 100%;
+  }
+
+  .routes-img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+/* Responsive for mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .bus-routes {
+    margin-bottom: 100px;
+  }
+
+  .city-routes {
+    margin-bottom: 80px;
+    gap: 40px;
+  }
+
+  .city-routes-title {
+    font-size: 36px;
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .city-routes-desc,
+  .city-routes-desc-bottom {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .city-routes-btn {
+    width: 200px;
+    height: 60px;
+    font-size: 11px;
+  }
+
+  .routes-img {
+    width: 70%;
+    height: auto;
+  }
+}
+
+/* Responsive for small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .bus-routes {
+    margin-bottom: 60px;
+  }
+
+  .city-routes {
+    gap: 30px;
+  }
+
+  .city-routes-title {
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .city-routes-desc,
+  .city-routes-desc-bottom {
+    font-size: 12px;
+  }
+
+  .city-routes-btn {
+    width: 180px;
+    height: 55px;
+    font-size: 10px;
+  }
+
+  .routes-img {
+    width: 100%;
+    height: auto;
+  }
+}

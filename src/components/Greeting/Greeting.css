@@ -1,0 +1,165 @@
+body.dark .greeting-part {
+  color: #93b1a6 !;
+}
+.greeting-part {
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 138px;
+  margin-bottom: 250px;
+}
+.title {
+  font-family: "Druk";
+  font-size: 38px;
+  max-width: 650px;
+  line-height: 48px;
+  color: #183d3d;
+  margin-bottom: 18px;
+}
+body.dark .title {
+  color: #93b1a6;
+}
+.subtitle {
+  max-width: 403px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 34px;
+  color: #183d3d;
+}
+body.dark .subtitle {
+  color: #fff;
+}
+.micro {
+  font-weight: 600;
+
+  color: #24dcdc;
+}
+.discount {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  width: 700px;
+  height: 97px;
+  top: 519px;
+  background-color: #183d3d;
+  color: #fff;
+  border-radius: 0px;
+  transition: 0.3s all;
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
+}
+body.dark .discount {
+  background-color: #93b1a6;
+  color: #183d3d;
+}
+body.dark .discount:hover {
+  background-color: #80fcdc;
+  color: #183d3d;
+}
+.discount:hover {
+  background-color: #80fcdc;
+  color: #183d3d;
+}
+.discount-text {
+  font-family: "Druk";
+  font-size: 18px;
+  margin-right: 20px;
+}
+.percent {
+  font-family: "Druk";
+  font-size: 36px;
+  margin-right: 15px;
+  margin-top: -5px;
+}
+
+/* Responsive for large tablets (768px to 1024px) */
+@media (max-width: 1024px) {
+  .greeting-part {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 32px;
+    max-width: 600px;
+    line-height: 44px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .discount {
+    width: 600px;
+    top: 470px;
+  }
+
+  .bus-model {
+    width: 320px !important;
+    height: 320px !important;
+  }
+}
+
+/* Responsive for tablets (768px) */
+@media (max-width: 768px) {
+  .greeting-part {
+    margin-top: 100px;
+    margin-bottom: 200px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .discount {
+    width: 500px;
+    top: 450px;
+  }
+}
+
+/* Responsive for mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .greeting-part {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 150px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    max-width: 280px;
+    margin-bottom: 15px;
+  }
+
+  .discount {
+    display: none;
+  }
+
+  .bus-model {
+    width: 280px !important;
+    height: 280px !important;
+  }
+}
