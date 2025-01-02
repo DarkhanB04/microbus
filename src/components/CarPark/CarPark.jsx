@@ -60,7 +60,7 @@ const CarPark = () => {
         className="car-park"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
       >
         <motion.p custom={0} variants={textVariants} className="car-park-title">
@@ -85,7 +85,7 @@ const CarPark = () => {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
                 className="car-park-el"
               >
@@ -99,7 +99,9 @@ const CarPark = () => {
                     <hr />
                   </div>
                   <div className="car-desc">{t(car.description)}</div>
-                  <img src={car.image} alt={car.name} className="car-img" />
+                  <img src={car.image} alt={car.name} className="car-img" loading="lazy"
+                  
+                   />
                 </motion.div>
               </motion.div>
             </SwiperSlide>
@@ -108,7 +110,7 @@ const CarPark = () => {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={containerVariants}
               className="car-park-el"
             >
@@ -126,6 +128,7 @@ const CarPark = () => {
                   src={elantra}
                   alt="Hyundai Elantra"
                   className="car-img elantra"
+                  loading="lazy"
                 />
               </motion.div>
             </motion.div>

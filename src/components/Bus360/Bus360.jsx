@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { containerVariants, textVariants } from "../../framerVariants";
 // Sphere component for the 360° experience
 function Sphere({ isInteractive }) {
-  const texture = useLoader(TextureLoader, "./three.jpg");
+  const texture = useLoader(TextureLoader, "/microbus/three.jpg");
   const meshRef = useRef();
 
   // Rotate the sphere for a dynamic effect

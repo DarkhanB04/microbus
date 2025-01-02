@@ -10,7 +10,7 @@ import map from "../../../assets/map.png";
 extend({ OrbitControls });
 
 const Bus = forwardRef((props, ref) => {
-  const gltf = useLoader(GLTFLoader, "/bus-animation/scene.gltf");
+  const gltf = useLoader(GLTFLoader, "/microbus/bus-animation/scene.gltf");
   const wheelRefs = useRef([]);
   const [scrollPosition, setScrollPosition] = useState(0);
 

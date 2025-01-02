@@ -29,7 +29,7 @@ body.dark .bus360-title {
   margin-bottom: 20px;
 }
 .static-preview {
-  background: url("./three.jpg");
+  background: url("/three.jpg");
   width: 471px; /* Fixed width */
   height: 517px; /* Fixed height */
   background-size: cover;
@@ -78,6 +78,8 @@ body.dark .static-cont-decor2 {
 
 /* Start button centered below the static 360 sphere */
 .start-360-button {
+  font-style: normal;
+  font-weight: 700;
   margin-top: 20px; /* Space between the button and sphere */
 }
 
@@ -90,6 +92,8 @@ body.dark .static-cont-decor2 {
   color: #183d3d;
   border: none;
   border-radius: 5px;
+  font-style: normal;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
 }
@@ -150,68 +154,108 @@ body.dark .start-360-button button:hover {
 body.lang-ru .curve.second {
   width: 194.21px;
   height: 194.64px;
-  background: url("../../assets/curve_second.svg");
+  background: url("../../assets/curve_second.png");
 }
 body.lang-en .curve.second {
   width: 195.03px;
   height: 194.99px;
-  background: url("../../assets/curve_second_eng.svg");
+  background: url("../../assets/curve_second_eng.png");
 }
 body.lang-kk .curve.second {
   width: 195.01px;
   height: 194.95px;
-  background: url("../../assets/curve_second_kk.svg");
+  background: url("../../assets/curve_second_kk.png");
 }
 
 /* Adjustments for different screen sizes */
 /* Mobile */
 @media (max-width: 768px) {
+  .bus360-main {
+    max-width: 90%;
+  }
   .bus360-title {
-    font-size: 32px;
-    line-height: 45px;
+    font-size: 18px;
+    line-height: 20px;
     margin-bottom: 50px;
   }
 
   .static-preview {
-    width: 300px;
-    height: 350px;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   .static-cont {
-    flex-direction: column;
-    gap: 30px;
+  }
+  .static-cont-decor1,
+  .static-cont-decor2 {
+    display: none;
   }
 
   .start-360-button button {
-    width: 300px;
+    max-width: 300px;
+
     font-size: 16px;
   }
 
   .canvas-container.popup-three {
-    width: 90%;
-    height: auto;
+    max-width: 350px;
+    max-height: 350px;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bus360-main {
+    max-width: 80%; /* Restrict width for tablets */
+    margin: 0 auto; /* Center align */
+  }
 
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
   .bus360-title {
-    font-size: 40px;
-    line-height: 50px;
-    margin-bottom: 70px;
+    font-size: 32px; /* Scale down title font size */
+    line-height: 40px;
+    margin-bottom: 70px; /* Adjust spacing below title */
   }
 
   .static-preview {
-    width: 400px;
-    height: 450px;
+    max-width: 400px; /* Scale down preview size */
+    max-height: 400px;
+    background-size: cover;
+    border-radius: 15px; /* Slightly reduce border radius */
+  }
+
+  .static-cont {
+    display: flex;
+    gap: 30px; /* Reduce gap for better layout on tablets */
+    justify-content: center; /* Center-align content */
+  }
+
+  .static-cont-decor1,
+  .static-cont-decor2 {
+    width: 100px; /* Scale down decor sizes */
+    height: 400px;
+  }
+
+  .start-360-button {
+    margin-top: 20px; /* Add spacing between button and preview */
   }
 
   .start-360-button button {
-    width: 400px;
-    font-size: 17px;
+    max-width: 500px; /* Adjust button size for tablets */
+    height: 60px;
+    font-size: 16px;
+    border-radius: 8px; /* Adjust button radius */
+  }
+
+  .popup-overlay-three {
+    padding: 20px; /* Add padding to avoid content sticking to the edges */
   }
 
   .canvas-container.popup-three {
-    width: 80%;
+    width: 500px; /* Scale down popup size */
+    height: 500px;
+    border-radius: 20px; /* Adjust border radius for tablets */
+  }
+
+  .close-button-three {
+    font-size: 14px; /* Reduce close button font size */
+    padding: 8px; /* Adjust padding for better usability */
   }
 }

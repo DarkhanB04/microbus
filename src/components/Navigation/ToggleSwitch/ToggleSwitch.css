@@ -43,3 +43,8 @@
 .toggle-switch-checkbox:checked + .toggle-switch-label:before {
   transform: translateX(30px);
 }
+@media (max-width: 768px) {
+  .toggle-switch {
+    display: none;
+  }
+}

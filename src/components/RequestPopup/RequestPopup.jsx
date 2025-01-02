@@ -3,19 +3,20 @@ import "./RequestPopup.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 const RequestPopup = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const [phone, setPhone] = useState("");
   const [isClosing, setIsClosing] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(null); // Track the submission status
+  const [submissionStatus, setSubmissionStatus] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
       setIsClosing(false);
-      setIsSubmitted(false); // Reset on close
-      setSubmissionStatus(null); // Reset the submission status
+      setIsSubmitted(false);
+      setSubmissionStatus(null);
     }
   }, [isOpen]);
 
@@ -30,27 +31,31 @@ const RequestPopup = ({ isOpen, onClose }) => {
     event.preventDefault();
     const name = event.target.name.value;
 
-    fetch("http://localhost:3000/send-message", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, phone }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
+    // Telegram API Integration
+    const CHAT_ID = import.meta.env.VITE_CHAT_ID;
+    const BOT_TOKEN = import.meta.env.VITE_BOT_TOKEN;
+    const URI_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    const telegramMessage = `🚀 <b>НОВАЯ ЗАЯВКА!</b> 🚀\n\n👤 <b>Имя:</b> ${name}\n📞 <b>Телефон:</b> +${phone}\n\n💡Свяжитесь с клиентом как можно скорее.\n <i>"Вовремя принятое действие — залог успеха!"</i> `;
+
+    axios
+      .post(URI_API, {
+        chat_id: CHAT_ID,
+        parse_mode: "html",
+        text: telegramMessage,
+      })
+      .then((response) => {
+        if (response.status === 200) {
           setSubmissionStatus("success");
         } else {
           setSubmissionStatus("error");
+          console.log(response.status);
         }
         setIsSubmitted(true);
       })
-      .catch((error) => {
-        console.error("Error:", error);
+      .catch(() => {
         setSubmissionStatus("error");
         setIsSubmitted(true);
       });
-
-    // No need to close the popup immediately, we will show the status message first
   };
 
   return (
@@ -89,7 +94,12 @@ const RequestPopup = ({ isOpen, onClose }) => {
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">{t("popup.name")}</label>
-                <input type="text" id="name" name="name" placeholder="Введите имя" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Введите имя"
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="tel">{t("popup.tel")}</label>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./BusRoutes.css";
-import curve2 from "../../assets/curve_second.svg";
 import cityright from "../../assets/city-routes-right.png";
 import intercityright from "../../assets/intercity-routes-right.png";
 import RequestPopup from "../RequestPopup/RequestPopup"; // Import the popup component
@@ -19,7 +18,7 @@ const BusRoutes = () => {
   return (
     <motion.div
       className="bus-routes"
-       id="about"
+      id="about"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -39,6 +38,7 @@ const BusRoutes = () => {
             variants={textVariants}
           >
             <div className="city-routes-title">{t("routes.city.title")}</div>
+            <img src={cityright} alt="" className="routes-img mobile" />
             <div className="city-routes-desc">
               {t("routes.city.description")}
             </div>
@@ -72,6 +72,7 @@ const BusRoutes = () => {
             <div className="city-routes-title inter">
               {t("routes.intercity.title")}
             </div>
+            <img src={intercityright} alt="" className="routes-img mobile" />
             <div className="city-routes-desc inter">
               {t("routes.intercity.description")}
             </div>

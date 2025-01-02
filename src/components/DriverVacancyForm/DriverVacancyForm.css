@@ -32,6 +32,7 @@
 }
 .vacancy-form-subtitle {
   font-family: "Noto Sans";
+  color: #183d3d;
   font-weight: 300;
   max-width: 900px;
   margin-bottom: 40px;
@@ -55,13 +56,11 @@
   appearance: none; */
   width: 100%;
   height: 55px;
-  padding: 8px;
-
   border-radius: 4px 4px 0 0;
   outline: none;
   border: none;
   border-bottom: 1px solid #183d3d;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 10px;
   font-family: "Noto Sans";
 }
@@ -103,7 +102,7 @@
   height: 160px;
   width: 160px;
 
-  animation: rotate 30s linear infinite;
+  animation: rotate 20s linear infinite;
 }
 .vc-el2 {
   position: absolute;
@@ -112,7 +111,7 @@
   height: 160px;
   width: 160px;
 
-  animation: rotate 30s linear infinite;
+  animation: rotate 20s linear infinite;
 }
 @keyframes rotate {
   0% {
@@ -170,7 +169,6 @@
   }
 
   .vacancy-title {
-    flex-direction: column;
     text-align: center;
   }
 
@@ -199,36 +197,137 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .vacancy {
-    padding: 0 10px;
+    padding: 0 20px;
+    margin-bottom: 0px;
+  }
+  .vacancy-title {
+    margin-bottom: 15px;
+    gap: 10px;
   }
 
   .vacancy-form-container {
-    padding: 20px;
+    padding: 40px 20px;
   }
 
   .vacancy-title img {
-    width: 50px;
-    height: 50px;
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: -2px;
   }
 
   .vacancy-form-title {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .vacancy-form-subtitle {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+  .vacancy-form .vacancy-form-group {
+    margin-bottom: 10px;
+  }
+  .vacancy-form label {
     font-size: 12px;
   }
-
+  .vacancy-form input,
+  .vacancy-form select {
+    width: 100%;
+    height: 25px;
+    font-size: 14px; /* Scale font size */
+    border-radius: 4px 4px 0 0;
+    outline: none;
+    border: none;
+    border-bottom: 0.5px solid #183d3d;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: "Noto Sans";
+  }
   .driver-submit-button {
+    margin-top: 10px;
     font-size: 12px;
     height: 45px;
   }
 
   .vc-el,
   .vc-el2 {
-    height: 80px;
-    width: 80px;
+    max-height: 60px;
+    max-width: 60px;
+  }
+  .vc-el {
+    top: -32px;
+    left: 10px;
+  }
+  .vc-el2 {
+    right: 10px;
+    bottom: -30px;
+  }
+
+  .success-message h2,
+  .error-message h2 {
+    font-family: "Druk";
+    color: #183d3d;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .vacancy {
+    max-width: 90%; /* Reduce width for smaller screens */
+    margin: 0 auto 80px; /* Center and add spacing below */
+  }
+
+  .vacancy-form-container {
+    padding: 50px; /* Reduce padding for tablets */
+    border-radius: 20px; /* Adjust border radius */
+  }
+
+  .vacancy-title {
+    gap: 10px; /* Reduce gap between elements */
+    margin-bottom: 30px; /* Adjust bottom margin */
+    text-align: center; /* Center-align the title */
+  }
+
+  .vacancy-title img {
+    width: 90px; /* Scale image for tablets */
+    height: 90px;
+  }
+
+  .vacancy-form-title {
+    font-size: 34px; /* Adjust font size */
+    line-height: 40px; /* Adjust line height for readability */
+  }
+
+  .vacancy-form-subtitle {
+    font-size: 16px; /* Scale subtitle font */
+    max-width: 600px; /* Limit width for readability */
+    margin: 0 auto 30px; /* Center-align and add spacing */
+  }
+
+  .vacancy-form .vacancy-form-group {
+    margin-bottom: 20px; /* Adjust spacing between form fields */
+  }
+
+  .vacancy-form label {
+    font-size: 14px; /* Increase label font size */
+  }
+
+  .vacancy-form input,
+  .vacancy-form select {
+    height: 45px; /* Adjust input height */
+    font-size: 14px; /* Scale font size */
+  }
+
+  .driver-submit-button {
+    font-size: 16px; /* Maintain clear button text */
+    height: 55px; /* Adjust button size */
+    margin-top: 30px; /* Add spacing above button */
+  }
+
+  .vc-el,
+  .vc-el2 {
+    width: 120px; /* Scale decorative elements */
+    height: 120px;
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import curve3 from "../../assets/curve_third.svg";
 import "./Questions.css";
 import { containerVariants, textVariants } from "../../framerVariants";
 import { useTranslation } from "react-i18next";
@@ -45,9 +44,6 @@ const Questions = () => {
             {t("questions.button")}
           </motion.button>
         </a>
-        <motion.p className="dontbeshy" custom={2} variants={textVariants}>
-          {t("questions.shyText")}
-        </motion.p>
       </motion.div>
     </motion.div>
   );

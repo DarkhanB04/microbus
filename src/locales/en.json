@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "keywords": "minibus rental Astana, bus rental Astana, passenger transportation Astana, Astana transport services, private bus hire Astana, rent a minibus Astana, shuttle service Astana, group transportation Astana, corporate bus rental Astana, affordable passenger transport Astana"
+  },
   "nav": {
     "aboutUs": "Our company",
     "price": "Price",
@@ -138,7 +141,7 @@
     "privacyPolicy": "Privacy Policy",
     "offerAgreement": "Offer Agreement",
     "scrollAlt": "Scroll to top",
-    "copyright": "© 2024 Microbus LLP",
+    "copyright": "© 2024 МИКРОБУС LLP",
     "rightsReserved": "All rights reserved."
   },
   "carPark": {
@@ -161,7 +164,7 @@
     "no": "No",
     "drivingCategory": "Max. driving category",
     "experience": "Driving experience (years)",
-    "submit": "Submit"
+    "submit": "SUBMIT"
   },
   "popup": {
     "title": "LEAVE A REQUEST FOR A CONSULTATION",
@@ -170,7 +173,7 @@
     "submit": "SUBMIT",
     "successTitle": "SUCCESSFULLY SENT!",
     "successMessage": "Thank you for reaching out. We will get back to you soon.",
-    "errorTitle": "Oops! Something went wrong.",
+    "errorTitle": "OOPS! SOMETHING WENT WRONG.",
     "errorMessage": "There was an issue sending your request. Please try again later.",
     "close": "CLOSE"
   }

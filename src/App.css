@@ -1,7 +1,8 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; /* Removes focus outline globally */
 }
 html {
   scroll-behavior: smooth;
@@ -12,6 +13,87 @@ body {
 }
 body.dark {
   color: #93b1a6;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* Optional to keep the text color consistent */
+}
+a,
+a:focus,
+a:active {
+  outline: none !important; /* Ensure no outline */
+  box-shadow: none !important; /* Ensure no shadow */
+  text-decoration: none; /* Remove underline */
+}
+
+/* For inputs and select elements */
+input,
+input:focus,
+select,
+select:focus,
+textarea,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit; /* Ensure consistent border color */
+}
+/* Apply this to the global stylesheet */
+a,
+input,
+select,
+textarea {
+  outline: none;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+a:focus,
+a:active,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+a,
+input,
+select,
+textarea {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent; /* For mobile browsers */
+}
+
+a:focus,
+a:active,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent; /* Removes highlight */
+}
+.nav-links a:visited {
+  color: inherit; /* Ensures the visited links don't turn blue */
+}
+
+a:hover {
+  color: inherit; /* Optional: Change on hover, if desired */
+  text-decoration: underline; /* Add hover effect, if needed */
+}
+
+.nav-links a:active {
+  color: inherit; /* Prevents the blue text on click */
+}
+
+.nav-links a:focus {
+  color: inherit; /* Ensures the focus state doesn't turn blue */
+  outline: none; /* Removes the outline */
 }
 body.dark svg path {
   fill: #93b1a6 !important;
@@ -95,8 +177,8 @@ body.dark .bg-us3 {
 }
 .bg-leftel1 {
   /* z-index: -100; */
-  width: 250px;
-  height: 370px;
+  max-width: 250px;
+  max-height: 370px;
   position: absolute;
   left: 0;
   top: 3450.22px;
@@ -152,4 +234,117 @@ body.dark .bg-us3 {
 }
 body.dark .main-mesh {
   opacity: 0.2;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-mesh {
+    display: none;
+  }
+  .bg-us1 {
+    display: none;
+  }
+  .bg-us2 {
+    display: none;
+  }
+
+  .bg-leftel3-wrapper {
+    display: none;
+  }
+  .bg-us3 {
+    display: none;
+  }
+  .bg-us4 {
+    display: none;
+  }
+  .bg-us5 {
+    display: none;
+  }
+  .bg-leftel1 {
+    display: none;
+  }
+  .bg-leftel2 {
+    display: none;
+  }
+  .bg-leftel3-wrapper {
+    display: none;
+  }
+  .bg-rightel1 {
+    display: none;
+  }
+  .bg-rightel2 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-mesh {
+    top: 4660px;
+    height: 600px;
+  }
+  .bg-us1 {
+    top: 3050px;
+    max-width: 500px;
+    max-height: 500px;
+    opacity: 1 !important;
+    z-index: -1000;
+  }
+  .bg-us2 {
+    top: 3650px;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .bg-leftel3-wrapper {
+  }
+  .bg-us3 {
+    top: 6150px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .bg-us4 {
+    /* mesh-gradient 5 */
+    top: 8450px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .bg-us5 {
+    top: 8750px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .bg-leftel1 {
+    top: 3220px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+  .bg-leftel2 {
+    top: 6300px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+  .bg-leftel3-wrapper {
+    top: 8600.22px;
+    max-width: 100px;
+    max-height: 120px;
+  }
+  .bg-rightel1 {
+    top: 3800px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+  .bg-rightel2 {
+    top: 8850.22px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+  @keyframes floatd {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 }

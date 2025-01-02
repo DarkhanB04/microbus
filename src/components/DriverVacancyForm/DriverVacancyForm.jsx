@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./DriverVacancyForm.css";
-import driver from "../../assets/driver.svg";
+import driver from "../../assets/driver.png";
 import PhoneInput from "react-phone-input-2";
 import { containerVariants, textVariants } from "../../framerVariants";
 import { useTranslation } from "react-i18next";
 import vcel from "../../assets/vacancy-el.svg";
+import axios from "axios";
 
 const DriverVacancyForm = () => {
   const { t } = useTranslation();
@@ -16,30 +17,30 @@ const DriverVacancyForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const data = {
-      name: formData.get("name"),
-      phone: formData.get("phone"),
-      ownBus: formData.get("ownBus"),
-      drivingCategory: formData.get("drivingCategory"),
-      experience: formData.get("experience"),
-    };
+    const name = formData.get("name");
+    const ownBus = formData.get("ownBus");
 
-    fetch("http://localhost:3000/send-driver-vacancy", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
+    // Telegram API Integration
+    const CHAT_ID = import.meta.env.VITE_CHAT_ID;
+    const BOT_TOKEN = import.meta.env.VITE_BOT_TOKEN;
+    const URI_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    const telegramMessage = `💼 <b>НОВАЯ ЗАЯВКА НА ВАКАНСИЮ!</b> 💼\n\n👤 <b>Имя:</b> ${name}\n📞 <b>Телефон:</b> +${phone}\n🚌 <b>Собственный автобус:</b> ${ownBus}\n\n<i>Каждый новый кандидат — это возможность для роста компании!</i> 🤝`;
+
+    axios
+      .post(URI_API, {
+        chat_id: CHAT_ID,
+        parse_mode: "html",
+        text: telegramMessage,
+      })
+      .then((response) => {
+        if (response.status === 200) {
           setSubmissionStatus("success");
         } else {
           setSubmissionStatus("error");
         }
         setIsSubmitted(true);
       })
-      .catch((error) => {
-        console.error("Error:", error);
+      .catch(() => {
         setSubmissionStatus("error");
         setIsSubmitted(true);
       });
@@ -132,32 +133,6 @@ const DriverVacancyForm = () => {
                   <option value="yes">{t("driverVacancy.yes")}</option>
                   <option value="no">{t("driverVacancy.no")}</option>
                 </select>
-              </motion.div>
-
-              <motion.div className="vacancy-form-group">
-                <label htmlFor="drivingCategory">
-                  {t("driverVacancy.drivingCategory")}
-                </label>
-                <select id="drivingCategory" name="drivingCategory">
-                  <option value="D1">D1</option>
-                  <option value="D1E">D1E</option>
-                  <option value="D">D</option>
-                  <option value="DE">DE</option>
-                  <option value="Tm">Tm</option>
-                  <option value="Tb">Tb</option>
-                </select>
-              </motion.div>
-
-              <motion.div
-                className="vacancy-form-group"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <label htmlFor="experience">
-                  {t("driverVacancy.experience")}
-                </label>
-                <input type="number" id="experience" name="experience" />
               </motion.div>
 
               <motion.button

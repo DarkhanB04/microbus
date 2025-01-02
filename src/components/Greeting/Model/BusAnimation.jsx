@@ -10,7 +10,7 @@ function BusAnimation() {
       style={{
         height: "450px",
         width: "450px",
-        overflow: "scroll",
+        overflow: "hidden",
         borderRadius: "25px",
         filter: "drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.09))",
         left: "100px",

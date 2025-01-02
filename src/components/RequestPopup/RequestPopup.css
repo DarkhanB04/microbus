@@ -192,6 +192,8 @@ body.dark .flag-dropdown {
 .close-button-error {
   background-color: #183d3d;
   color: #fff;
+  font-weight: 700;
+  font-style: normal;
   width: 100%;
   height: 60px;
   border: none;
@@ -207,46 +209,42 @@ body.dark .close-button {
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
   .popup-content {
-    padding: 20px 15px;
+    padding: 40px 20px;
+    max-width: 350px;
+    border-radius: 4px;
   }
 
   .popup-title {
-    font-size: 1.25rem; /* Adjust title size */
+    font-size: 1.1rem;
   }
-
-  .form-group input {
-    padding: 10px;
-    font-size: 0.9rem; /* Adjust input font size */
+  .form-group {
+    margin-bottom: 20px;
   }
-
-  .submit-button {
-    padding: 12px;
-    font-size: 1rem; /* Adjust button font size */
-  }
-}
-
-@media (max-width: 480px) {
-  .popup-content {
-    padding: 15px 10px;
-  }
-
-  .popup-title {
-    font-size: 1rem; /* Further adjust title size */
+  .form-group label {
+    font-size: 14px;
   }
 
   .form-group input {
     padding: 8px;
-    font-size: 0.85rem; /* Further adjust input font size */
+    font-size: 0.85rem;
+    border: 0.5px solid #ccc;
   }
-
+  .form-control {
+    border: 0.5px solid #ccc !important;
+  }
+  .flag-dropdown {
+    border: 0.5px solid #ccc !important;
+  }
   .submit-button {
-    padding: 10px;
-    font-size: 0.9rem; /* Further adjust button font size */
+    border-radius: 5px;
   }
-
   .close-button {
     font-size: 2rem; /* Make close button smaller */
     top: 5px; /* Adjust position */
     right: 10px; /* Adjust position */
+  }
+  .success-message h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
   }
 }

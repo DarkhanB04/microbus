@@ -44,6 +44,7 @@ const Price = () => {
           className="pricing-label premium"
           custom={0}
           variants={textVariants}
+          loading="lazy"
         />
         <motion.div
           className="pricing-price"
@@ -61,6 +62,7 @@ const Price = () => {
             className="pricing-image"
             custom={2}
             variants={textVariants}
+            loading="lazy"
           />
           <div className="pricing-details">
             <motion.h3 custom={3} variants={textVariants}>
@@ -70,7 +72,7 @@ const Price = () => {
             </motion.h3>
             <motion.ul custom={4} variants={textVariants}>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.premium.details.feature1")}
               </li>
               <li>
@@ -151,27 +153,27 @@ const Price = () => {
             </motion.h3>
             <motion.ul custom={4} variants={textVariants}>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.comfort.details.feature1")}
               </li>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.comfort.details.feature2")}
               </li>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.comfort.details.feature3")}
               </li>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.comfort.details.feature4")}
               </li>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.comfort.details.feature5")}
               </li>
               <li>
-                <img src={check} alt="" className="check" />
+                <img src={check} alt="" className="check" loading="lazy" />
                 {t("price.comfort.details.feature6")}
               </li>
             </motion.ul>

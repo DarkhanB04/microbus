@@ -101,8 +101,8 @@ const Greeting = () => {
         onClick={togglePopup}
       >
         <h1 className="discount-text">{t("greeting.discountFirst")}</h1>
-        <span className="percent">15%</span>
-        <h1 className="discount-text">{t("greeting.discountSecond")}</h1>
+        <span className="percent">10%</span>
+        <h1 className="discount-text second">{t("greeting.discountSecond")}</h1>
       </motion.div>
       <RequestPopup isOpen={isPopupOpen} onClose={togglePopup} />
     </motion.div>

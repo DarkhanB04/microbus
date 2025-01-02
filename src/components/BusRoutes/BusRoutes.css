@@ -65,6 +65,8 @@ body.dark .city-routes-desc-bottom {
   color: #183d3d;
   cursor: pointer;
   transition: 0.2s all ease-in-out;
+  font-style: normal;
+  font-weight: 700;
 }
 .city-routes-btn:hover {
   background-color: #183d3d;
@@ -81,6 +83,9 @@ body.dark .city-routes-btn:hover {
 .routes-img {
   width: 556px;
   height: 511px;
+}
+.routes-img.mobile {
+  display: none;
 }
 .intercity-routes {
   display: flex;
@@ -100,14 +105,12 @@ body.dark .city-routes-btn:hover {
   }
 
   .city-routes-title {
-    text-align: center;
     font-size: 42px;
     line-height: 55px;
   }
 
   .city-routes-desc,
   .city-routes-desc-bottom {
-    text-align: center;
     width: 100%;
   }
 
@@ -156,6 +159,8 @@ body.dark .city-routes-btn:hover {
 /* Responsive for small mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .bus-routes {
+    display: block;
+    margin: 0 auto;
     margin-bottom: 60px;
   }
 
@@ -164,8 +169,10 @@ body.dark .city-routes-btn:hover {
   }
 
   .city-routes-title {
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 20px;
+    max-width: 264px;
+    max-height: 50px;
+    line-height: 25px;
     margin-bottom: 15px;
   }
 
@@ -175,13 +182,64 @@ body.dark .city-routes-btn:hover {
   }
 
   .city-routes-btn {
-    width: 180px;
-    height: 55px;
+    max-width: 194px;
+    max-height: 51px;
     font-size: 10px;
   }
 
   .routes-img {
     width: 100%;
     height: auto;
+    display: none;
+  }
+  .routes-img.mobile {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .routes-img {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  .routes-img.mobile {
+    display: block;
+  }
+  .bus-routes {
+    max-width: 90%; /* Utilize most of the screen width */
+    margin: 0 auto; /* Center the entire section */
+    margin-bottom: 100px; /* Add spacing below the component */
+    text-align: center; /* Center-align all text */
+  }
+
+  .city-routes {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align all elements */
+    gap: 40px; /* Space between elements */
+    margin-bottom: 80px; /* Add spacing between sections */
+  }
+
+  .city-routes-title {
+    font-size: 36px; /* Adjust font size for better readability */
+    line-height: 50px; /* Maintain a balanced height */
+    margin-bottom: 20px; /* Space below the title */
+    margin: 0 auto;
+    max-width: 90%; /* Ensure title fits within the screen */
+  }
+
+  .city-routes-desc,
+  .city-routes-desc-bottom {
+    font-size: 16px; /* Increase text size slightly for tablets */
+    line-height: 24px; /* Improve readability */
+    margin: 10px auto; /* Add spacing and center align */
+    max-width: 80%; /* Limit text width for cleaner alignment */
+    text-align: center; /* Center-align text */
+  }
+
+  .city-routes-btn {
+    width: 250px; /* Larger button for tablets */
+    height: 65px;
+    font-size: 14px; /* Slightly larger font for better usability */
+    margin-top: 20px; /* Space above the button */
   }
 }

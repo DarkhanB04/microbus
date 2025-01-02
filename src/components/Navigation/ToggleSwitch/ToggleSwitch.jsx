@@ -1,5 +1,7 @@
+// src/components/Navigation/ToggleSwitch/ToggleSwitch.js
 import React from "react";
 import "./ToggleSwitch.css";
+
 const ToggleSwitch = ({ isOn, handleToggle }) => {
   return (
     <div className="toggle-switch">
@@ -7,10 +9,10 @@ const ToggleSwitch = ({ isOn, handleToggle }) => {
         checked={isOn}
         onChange={handleToggle}
         className="toggle-switch-checkbox"
-        id={`toggle-switch-new`}
+        id={`toggle-switch`}
         type="checkbox"
       />
-      <label className="toggle-switch-label" htmlFor={`toggle-switch-new`}>
+      <label className="toggle-switch-label" htmlFor={`toggle-switch`}>
         <span className={`toggle-switch-button`} />
       </label>
     </div>

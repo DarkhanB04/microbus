@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "./Us.css";
-import block from "../../assets/block.svg";
-import driver from "../../assets/driver.svg";
-import camera from "../../assets/camera.svg";
-import money from "../../assets/money.svg";
-import conditioner from "../../assets/conditioner.svg";
-import gps from "../../assets/gps.svg";
-import map from "../../assets/map.svg";
-import busicon from "../../assets/bus-icon.svg";
+import block from "../../assets/block.png";
+import driver from "../../assets/driver.png";
+import camera from "../../assets/camera.png";
+import money from "../../assets/money.png";
+import conditioner from "../../assets/conditioner.png";
+import gps from "../../assets/gps.png";
+import map from "../../assets/mapicon.png";
+import busicon from "../../assets/bus-icon.png";
 import { containerVariants, textVariants } from "../../framerVariants";
 
 const Us = () => {
@@ -42,6 +42,7 @@ const Us = () => {
                 src={money}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -49,6 +50,7 @@ const Us = () => {
                 src={block}
                 alt=""
                 className="us-block"
+                loading="lazy"
               />
               <motion.p
                 custom={2}
@@ -60,7 +62,7 @@ const Us = () => {
               <motion.p
                 custom={3}
                 variants={textVariants}
-                className="card-text"
+                className="card-text cm"
               >
                 {t("us.card1.text")}
               </motion.p>
@@ -73,6 +75,7 @@ const Us = () => {
                 src={driver}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -104,6 +107,7 @@ const Us = () => {
                 src={camera}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -111,6 +115,7 @@ const Us = () => {
                 src={block}
                 alt=""
                 className="us-block"
+                loading="lazy"
               />
               <motion.p
                 custom={2}
@@ -143,6 +148,7 @@ const Us = () => {
                 src={conditioner}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -150,6 +156,7 @@ const Us = () => {
                 src={block}
                 alt=""
                 className="us-block"
+                loading="lazy"
               />
               <motion.p
                 custom={2}
@@ -174,6 +181,7 @@ const Us = () => {
                 src={gps}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -181,6 +189,7 @@ const Us = () => {
                 src={block}
                 alt=""
                 className="us-block"
+                loading="lazy"
               />
               <motion.p
                 custom={2}
@@ -205,6 +214,7 @@ const Us = () => {
                 src={map}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -212,6 +222,7 @@ const Us = () => {
                 src={block}
                 alt=""
                 className="us-block"
+                loading="lazy"
               />
               <motion.p
                 custom={2}
@@ -244,6 +255,7 @@ const Us = () => {
                 src={busicon}
                 alt=""
                 className="card-top-img"
+                loading="lazy"
               />
               <motion.img
                 custom={0}
@@ -251,6 +263,7 @@ const Us = () => {
                 src={block}
                 alt=""
                 className="us-block"
+                loading="lazy"
               />
               <motion.p
                 custom={2}

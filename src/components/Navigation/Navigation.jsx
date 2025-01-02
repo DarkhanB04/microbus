@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Navigation.css";
 import ToggleSwitch from "./ToggleSwitch/ToggleSwitch";
 import Dropdown from "./Dropdown/Dropdown";
 import Phone from "./Phone/Phone";
-import RequestPopup from "../RequestPopup/RequestPopup";
 import { useTranslation } from "react-i18next";
 
-const Navigation = () => {
+const Navigation = ({ isOpen, onClose, onRequestClick }) => {
   const { t, i18n } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(
     () => localStorage.getItem("darkMode") === "true"
@@ -14,9 +13,19 @@ const Navigation = () => {
   const [language, setLanguage] = useState(
     () => localStorage.getItem("i18nextLng") || i18n.language
   );
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Hamburger menu toggle
+  const navRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && navRef.current && !navRef.current.contains(event.target)) {
+        onClose(); // Close the side menu
+      }
+    };
 
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
   useEffect(() => {
     document.body.classList.add(`lang-${language}`);
   }, [language]);
@@ -39,54 +48,39 @@ const Navigation = () => {
     localStorage.setItem("i18nextLng", selectedLanguage.toLowerCase());
   };
 
-  const togglePopup = () => setIsPopupOpen(!isPopupOpen);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   return (
-    <header className="header">
+    <header ref={navRef} className={`header side-menu ${isOpen ? "open" : ""}`}>
       <nav className="navigation">
         <div alt="Microbus Logo" className="logo" />
-        <div className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <a href="#about" className="nav-item">
+        <div className="nav-links">
+          <a href="#about" className="nav-item" onClick={onClose}>
             {t("nav.aboutUs")}
           </a>
-          <a href="#price" className="nav-item">
+          <a href="#price" className="nav-item" onClick={onClose}>
             {t("nav.price")}
           </a>
-          <a href="#partners" className="nav-item">
+          <a href="#partners" className="nav-item" onClick={onClose}>
             {t("nav.partners")}
           </a>
-          <a href="#footer" className="nav-item">
+          <a href="#footer" className="nav-item" onClick={onClose}>
             {t("nav.contacts")}
           </a>
         </div>
-        <Phone />
-        <button className="request-button" onClick={togglePopup}>
-          {t("nav.request")}
-        </button>
-        <Dropdown
-          options={["EN", "KK", "RU"]}
-          defaultOption={language.toUpperCase()}
-          selectedLanguage={language}
-          onChange={handleLanguageChange}
-        />
-        <ToggleSwitch isOn={isDarkMode} handleToggle={handleToggle} />
-        {/* <button className="hamburger" onClick={toggleMenu}>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button> */}
-        <button
-          className={`hamburger ${isMenuOpen ? "active" : ""}`}
-          onClick={toggleMenu}
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+        <div className="right-section-nav">
+          <Phone />
+          <button className="request-button" onClick={onRequestClick}>
+            {t("nav.request")}
+          </button>
+          <div className="dropdown-nav">
+            <Dropdown
+              options={["EN", "KK", "RU"]}
+              defaultOption={language.toUpperCase()}
+              selectedLanguage={language}
+              onChange={handleLanguageChange}
+            />
+          </div>
+        </div>
       </nav>
-      <RequestPopup isOpen={isPopupOpen} onClose={togglePopup} />
     </header>
   );
 };
