@@ -6,6 +6,6 @@ export default defineConfig({
   base: "/microbus/",
   plugins: [react()],
   build: {
-    outDir: "dist/microbus" // Output to a subdirectory for clarity
+    outDir: "dist",
   },
 });
