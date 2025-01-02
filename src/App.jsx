@@ -24,7 +24,6 @@ import Footer from "./components/Footer/Footer";
 import bg from "./assets/mesh-left.png";
 import bg2 from "./assets/mesh-bg2.png";
 
-import preivew from "./assets/preview.png";
 import rightel1 from "./assets/right-el.png";
 import rightel2 from "./assets/rightel2.png";
 import leftel1 from "./assets/left-el.png";

@@ -5,4 +5,7 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   base: "/microbus/",
   plugins: [react()],
+  build: {
+    outDir: "dist/microbus" // Output to a subdirectory for clarity
+  },
 });

@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/microbus/:path*", 
+        "destination": "/:path*" 
+      }
+    ]
+  }
