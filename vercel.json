@@ -1,0 +1,15 @@
+{
+    "rewrites": [
+      {
+        "source": "/microbus/:path*",
+        "destination": "/:path*"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/microbus/",
+        "permanent": false
+      }
+    ]
+  }
