@@ -29,7 +29,7 @@ body.dark .bus360-title {
   margin-bottom: 20px;
 }
 .static-preview {
-  background: url("/three.jpg");
+  background: url("/previewbus.png");
   width: 471px; /* Fixed width */
   height: 517px; /* Fixed height */
   background-size: cover;

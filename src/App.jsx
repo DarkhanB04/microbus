@@ -21,9 +21,9 @@ import Price from "./components/Price/Price";
 import DriverVacancyForm from "./components/DriverVacancyForm/DriverVacancyForm";
 import Questions from "./components/Questions/Questions";
 import Footer from "./components/Footer/Footer";
+
 import bg from "./assets/mesh-left.png";
 import bg2 from "./assets/mesh-bg2.png";
-
 import rightel1 from "./assets/right-el.png";
 import rightel2 from "./assets/rightel2.png";
 import leftel1 from "./assets/left-el.png";
@@ -56,21 +56,21 @@ function App() {
       title: "Microbus - Passenger Transportation in Astana",
       description:
         "Reliable and affordable passenger transport services in Astana. Rent minibuses, buses, and vans for comfortable travel.",
-      image: "https://i.ibb.co.com/KGxKFjg/preview.png",
+      image: "",
       url: "https://microbus.kz",
     },
     ru: {
       title: "Microbus - Перевозка пассажиров в Астане",
       description:
         "Надежные и доступные услуги пассажирского транспорта в Астане. Аренда микроавтобусов, автобусов и автомобилей для комфортных поездок.",
-      image: "https://i.ibb.co.com/KGxKFjg/preview.png",
+      image: "",
       url: "https://microbus.kz",
     },
     kk: {
       title: "Microbus - Астанада жолаушылар тасымалы",
       description:
         "Астанадағы сенімді және қолжетімді жолаушылар тасымалы. Жайлы сапар үшін микроавтобустарды, автобустарды және көліктерді жалға алыңыз.",
-      image: "https://i.ibb.co.com/KGxKFjg/preview.png",
+      image: "",
       url: "https://microbus.kz",
     },
   };
@@ -131,32 +131,36 @@ function App() {
           <title>{titles[language]}</title>
           <meta name="description" content={descriptions[language]} />
           <meta name="keywords" content={t("meta.keywords")} />
-          <meta property="og:title" content={metaTags[language].title} />
+          <meta
+            property="og:title"
+            content="Microbus - Перевозка пассажиров в Астане"
+          />
           <meta
             property="og:description"
-            content={metaTags[language].description}
+            content="Надежные и доступные услуги пассажирского транспорта в Астане."
           />
-          <meta property="og:image" content={metaTags[language].image} />
-          <meta property="og:url" content={metaTags[language].url} />
           <meta
-            property="og:locale"
-            content={
-              language === "en"
-                ? "en_US"
-                : language === "ru"
-                ? "ru_RU"
-                : "kk_KZ"
-            }
+            property="og:image"
+            content="https://darkhanb04.github.io/microbus/assets/preview.png"
           />
+          <meta
+            property="og:url"
+            content="https://darkhanb04.github.io/microbus/"
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="ru_RU" />
 
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={metaTags[language].title} />
+          <meta
+            name="twitter:title"
+            content="Microbus - Перевозка пассажиров в Астане"
+          />
           <meta
             name="twitter:description"
-            content={metaTags[language].description}
+            content="Надежные и доступные услуги пассажирского транспорта в Астане. Аренда микроавтобусов, автобусов и автомобилей для комфортных поездок."
           />
-          <meta name="twitter:image" content={metaTags[language].image} />
+          <meta name="twitter:image" content="" />
 
           {/* JSON-LD Structured Data */}
           <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
